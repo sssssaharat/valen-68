@@ -20,10 +20,10 @@ export default function Home() {
         setStep((prev) => prev + 1); // ไปหน้าถัดไป
     }
 
-    function handleBack() {
-        setStep((prev) => prev - 1); // ย้อนกลับ
-        if (step === 2) setIndex(0); // รีเซ็ต index ถ้าย้อนกลับจากหน้า Card
-    }
+    // function handleBack() {
+    //     setStep((prev) => prev - 1); // ย้อนกลับ
+    //     if (step === 2) setIndex(0); // รีเซ็ต index ถ้าย้อนกลับจากหน้า Card
+    // }
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-[#CC001E]">
@@ -41,8 +41,9 @@ export default function Home() {
                         </h1>
 
                         <p className="text-6xl text-white romantic">
-                            Because you're <span className="font-bold">worth</span> the investment.
+                            Because you&apos;re <span className="font-bold">worth</span> the investment.
                         </p>
+
                         <button
                             className="heart-button"
                             onClick={handleNext}
@@ -80,8 +81,8 @@ export default function Home() {
                                 animate={isOpen ? { y: -60, opacity: 1 } : {}}
                                 transition={{ delay: 0.6, duration: 0.5 }}
                             >
-                                <p className="text-gray-700 font-bold text-2xl">💌 ถึง p'ying,</p>
-                                <p className="text-gray-600 mt-3 text-xl">"ไม่ต้องแบกทุกอย่างไว้คนเดียวหรอกนะ ผมอาจจะช่วยอะไรไม่ได้มาก แต่พร้อมฟังเสมอ🥹"</p>
+                                <p className="text-gray-700 font-bold text-2xl">💌 ถึง p&apos;ying,</p>
+                                <p className="text-gray-600 mt-3 text-xl">&quot;ไม่ต้องแบกทุกอย่างไว้คนเดียวหรอกนะ ผมอาจจะช่วยอะไรไม่ได้มาก แต่พร้อมฟังเสมอ🥹&quot;</p>
                             </motion.div>
 
                             {/* 🏦 ตัวซองใหญ่ขึ้น */}
@@ -118,7 +119,9 @@ export default function Home() {
                         exit={{ opacity: 0 }}
                     >
                         <motion.div key={`card-container-${index}`} style={{ width: 300, height: 400, position: "relative" }}>
-                            <Card key={`back-${index}`} frontCard={false} imageSrc={images[(index + 1) % images.length]} />
+                            <Card key={`back-${index}`}index={index}
+                                setIndex={setIndex}
+                                drag="x" frontCard={false} imageSrc={images[(index + 1) % images.length]} />
                             <Card
                                 key={`front-${index}`}
                                 frontCard={true}
