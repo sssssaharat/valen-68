@@ -101,7 +101,7 @@ export default function Home() {
                                 className="heart-button mt-8 w-32 h-32 text-2xl"
                                 onClick={handleNext} 
                             >
-                                ต่อ ❤️
+                                
                             </button>
                         )}
                     </motion.div>
@@ -129,12 +129,12 @@ export default function Home() {
                             />
                         </motion.div>
                         {/* ปุ่มย้อนกลับ */}
-                        <button
+                        {/* <button
                             className="mt-12 px-6 py-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition"
                             onClick={handleBack}
                         >
-                            🔙 ย้อนกลับ
-                        </button>
+                            
+                        </button> */}
                     </motion.div>
                 )}
             </AnimatePresence>
