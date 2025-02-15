@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,4 +21,38 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+/* ✅ กำหนดฟอนต์ลายมือ */
+.handwriting {
+  font-family: 'Dancing Script', cursive;
+}
+
+.romantic {
+  font-family: 'Great Vibes', cursive;
+}
+
+.heart-button {
+  position: relative;
+  background: linear-gradient(to right, #ff4d4d, #ff1a1a);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 24px;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(255, 50, 50, 0.5);
+  clip-path: path("M 50 15 C 35 -5, 0 -5, 0 30 C 0 60, 50 90, 50 90 C 50 90, 100 60, 100 30 C 100 -5, 65 -5, 50 15"
+    );
+  width: 100px;
+  height: 90px;
+  line-height: 85px;
+}
+
+.heart-button:hover {
+  background: linear-gradient(to right, #ff1a1a, #ff0000);
+  box-shadow: 0px 10px 20px rgba(255, 50, 50, 0.8);
+  transform: scale(1.1);
 }

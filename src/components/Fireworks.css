@@ -1,0 +1,29 @@
+.emoji-container {
+  position: fixed;
+  font-size: 48px; /* ทำให้อิโมจิใหญ่ขึ้น */
+  animation: float 5s ease-in-out infinite, fadeOut 5s forwards;
+  user-select: none; /* ป้องกันการเลือกอิโมจิ */
+  z-index: 9999;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(var(--moveX), var(--moveY));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* ค่อยๆ จางหายไป */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
